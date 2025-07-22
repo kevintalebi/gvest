@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'nprogress/nprogress.css';
 
 :root {
   --background: #ffffff;
@@ -20,7 +21,57 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(90deg, #e0b646 0%, #cedad9 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button, input, select, optgroup, textarea, ::file-selector-button {
+  font: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  border-radius: 0.75rem; /* rounded-xl */
+  background: linear-gradient(90deg, #e0b646 0%, #d4af37 100%);
+  opacity: 1;
+}
+
+/* RainbowKit ConnectButton custom golden gradient style */
+.rk-connect-button {
+  background: linear-gradient(90deg, #e0b646 0%, #d4af37 100%) !important;
+  color: #171717 !important;
+  font-weight: bold;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 24px 0 #e0b64633;
+  border: none !important;
+}
+
+.rk-connect-button:hover {
+  background: linear-gradient(90deg, #d4af37 0%, #e0b646 100%) !important;
+  color: #fff !important;
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+
+/* Force override RainbowKit ConnectButton style */
+button[class*="rk-connect"] {
+  background: linear-gradient(90deg, #e0b646 0%, #d4af37 100%) !important;
+  color: #171717 !important;
+  font-weight: bold !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 24px 0 #e0b64633 !important;
+  border: none !important;
+}
+
+button[class*="rk-connect"]:hover {
+  background: linear-gradient(90deg, #d4af37 0%, #e0b646 100%) !important;
+  color: #fff !important;
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+
+#nprogress .bar {
+  background: gold !important;
+  height: 4px;
 }
