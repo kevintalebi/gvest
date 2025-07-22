@@ -33,13 +33,6 @@ export default function WalletProvider({ children }: { children: ReactNode }) {
             accentColorForeground: 'black',
           })}
         >
-          {/* Mobile wallet connection instructions */}
-          {isMobile && (
-            <div className="w-full text-center bg-yellow-100 text-yellow-900 font-semibold py-2 px-4 rounded mb-4">
-              On mobile, use <b>WalletConnect</b> to connect your wallet.<br />
-              If you are in the MetaMask or Trust Wallet app, open this site in the app’s built-in browser for the best experience.
-            </div>
-          )}
           {children}
         </RainbowKitProvider>
       </WagmiConfig>

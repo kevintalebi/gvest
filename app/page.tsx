@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import ImageZoomModal from "../components/ImageZoomModal";
 
 export default function HomePage() {
@@ -31,13 +30,7 @@ export default function HomePage() {
               </button>
             </div>
             <div className="w-full flex justify-center mb-4">
-              {isMobile ? (
-                <div className="w-full text-center bg-yellow-100 text-yellow-900 font-semibold py-2 px-4 rounded mb-4">
-                  Please use WalletConnect from a desktop browser, or open this site in your wallet app’s built-in browser for the best experience.
-                </div>
-              ) : (
-                <ConnectButton />
-              )}
+              <CustomConnectWallet />
             </div>
           </div>
         </section>
@@ -225,5 +218,41 @@ export default function HomePage() {
         <ImageZoomModal src={zoomImg} alt={zoomAlt} onClose={() => setZoomImg(null)} />
       )}
     </main>
+  );
+}
+
+// CustomConnectWallet component
+function CustomConnectWallet() {
+  const [account, setAccount] = React.useState<string | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
+
+  async function connectWallet() {
+    setError(null);
+    if (typeof window === "undefined" || !(window as any).ethereum) {
+      setError("No Ethereum wallet detected. Please install MetaMask or use a wallet browser.");
+      return;
+    }
+    try {
+      const accounts = await (window as any).ethereum.request({ method: "eth_requestAccounts" });
+      setAccount(accounts[0]);
+    } catch (err: any) {
+      setError(err.message || "User rejected connection.");
+    }
+  }
+
+  return (
+    <div>
+      {account ? (
+        <div className="text-green-700 font-bold">Connected: {account}</div>
+      ) : (
+        <button
+          onClick={connectWallet}
+          className="bg-gold-gradient text-gray-dark py-3 px-8 rounded-lux shadow-gold-glow hover:bg-gold-dark hover:text-white transition-all text-xl mb-4 font-bold whitespace-nowrap text-center"
+        >
+          <span className="font-bold whitespace-nowrap">Connect Wallet</span>
+        </button>
+      )}
+      {error && <div className="text-red-600 mt-2">{error}</div>}
+    </div>
   );
 }
