@@ -8,6 +8,15 @@ import ImageZoomModal from "../components/ImageZoomModal";
 export default function HomePage() {
   const [zoomImg, setZoomImg] = React.useState<string | null>(null);
   const [zoomAlt, setZoomAlt] = React.useState<string | undefined>(undefined);
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsMobile(/Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent));
+      // Debug: log wallet providers
+      console.log('window.ethereum:', window.ethereum);
+      console.log('window.trustwallet:', (window as any).trustwallet);
+    }
+  }, []);
   return (
     <main className="bg-gold-gradient min-h-screen text-lux-gray overflow-x-hidden">
       <div className="w-3/4 mx-auto">
@@ -22,7 +31,13 @@ export default function HomePage() {
               </button>
             </div>
             <div className="w-full flex justify-center mb-4">
-              <ConnectButton />
+              {isMobile ? (
+                <div className="w-full text-center bg-yellow-100 text-yellow-900 font-semibold py-2 px-4 rounded mb-4">
+                  Please use WalletConnect from a desktop browser, or open this site in your wallet app’s built-in browser for the best experience.
+                </div>
+              ) : (
+                <ConnectButton />
+              )}
             </div>
           </div>
         </section>
