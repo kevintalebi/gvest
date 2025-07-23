@@ -217,6 +217,44 @@ export default function HomePage() {
       {zoomImg && (
         <ImageZoomModal src={zoomImg} alt={zoomAlt} onClose={() => setZoomImg(null)} />
       )}
+      {/* Social Media Icons Section */}
+      <footer className="w-full flex flex-col items-center justify-center py-8 mt-8 border-t border-accent bg-gold-gradient">
+        <div className="flex gap-6">
+          {/* Twitter */}
+          <a href="https://x.com/Goodman_Group" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="group">
+            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 transition-colors duration-200 group-hover:bg-[#1DA1F2]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 0 0 1.963-2.475 8.94 8.94 0 0 1-2.828 1.082A4.48 4.48 0 0 0 11.2 9.03c0 .352.04.695.116 1.022C7.728 9.89 4.1 8.1 1.67 5.149a4.48 4.48 0 0 0-.607 2.254c0 1.555.792 2.927 2.002 3.732a4.48 4.48 0 0 1-2.03-.561v.057c0 2.172 1.545 3.984 3.594 4.396a4.5 4.5 0 0 1-2.025.077c.571 1.78 2.23 3.075 4.197 3.11A8.98 8.98 0 0 1 2 19.54a12.68 12.68 0 0 0 6.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.698z" fill="#333" className="group-hover:fill-white transition-colors duration-200"/>
+              </svg>
+            </span>
+          </a>
+          {/* LinkedIn */}
+          <a href="https://au.linkedin.com/company/goodman" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group">
+            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 transition-colors duration-200 group-hover:bg-[#0077B5]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.369 4.267 5.455v6.285zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452z" fill="#333" className="group-hover:fill-white transition-colors duration-200"/>
+              </svg>
+            </span>
+          </a>
+          {/* Instagram */}
+          <a href="https://www.instagram.com/goodman.group/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="group">
+            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 transition-colors duration-200 group-hover:bg-[#E1306C]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6.406-8.006a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM21.6 6.6a5.6 5.6 0 0 0-5.6-5.6H8a5.6 5.6 0 0 0-5.6 5.6v8.8a5.6 5.6 0 0 0 5.6 5.6h8.8a5.6 5.6 0 0 0 5.6-5.6V8a5.6 5.6 0 0 0-5.6-5.6zm3.2 14.4a3.2 3.2 0 0 1-3.2 3.2H8a3.2 3.2 0 0 1-3.2-3.2V8A3.2 3.2 0 0 1 8 4.8h8.8A3.2 3.2 0 0 1 20 8v8.8z" fill="#333" className="group-hover:fill-white transition-colors duration-200"/>
+              </svg>
+            </span>
+          </a>
+          {/* YouTube */}
+          <a href="https://www.youtube.com/channel/UCqPJamGrRaP3OaT16gOCCeQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="group">
+            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 transition-colors duration-200 group-hover:bg-[#FF0000]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.112C19.13 3.6 12 3.6 12 3.6s-7.13 0-9.386.474A2.997 2.997 0 0 0 .502 6.186C0 8.442 0 12 0 12s0 3.558.502 5.814a2.997 2.997 0 0 0 2.112 2.112C4.87 20.4 12 20.4 12 20.4s7.13 0 9.386-.474a2.997 2.997 0 0 0 2.112-2.112C24 15.558 24 12 24 12s0-3.558-.502-5.814zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z" fill="#333" className="group-hover:fill-white transition-colors duration-200"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div className="mt-4 text-gray-dark text-sm">© {new Date().getFullYear()} GoodmanVest. All rights reserved.</div>
+      </footer>
     </main>
   );
 }

@@ -42,6 +42,7 @@ export default function ContributeClient() {
   const [txStatus, setTxStatus] = useState<string | null>(null);
   const [pendingTransaction, setPendingTransaction] = useState<{amount: number, referral: string} | null>(null);
   const [hasParent, setHasParent] = useState(false);
+  const [inputError, setInputError] = useState<string | null>(null);
 
   const { address, isConnected } = useAccount();
   const { writeContract, isPending, isSuccess, data, error } = useWriteContract();
@@ -176,13 +177,25 @@ export default function ContributeClient() {
     }
   };
 
+  const handleAmountChange = (value: string) => {
+    setAmount(value);
+    const num = parseFloat(value);
+    if (value === "") {
+      setInputError(null);
+    } else if (isNaN(num) || num < 300) {
+      setInputError("Minimum amount is 300 USDT.");
+    } else {
+      setInputError(null);
+    }
+  };
+
   const handleInvest = async () => {
     if (!isConnected) {
       setTxStatus('Please connect your wallet.');
       return;
     }
-    if (!amount || parsedAmount < 10) {
-      setTxStatus('Please enter a valid amount (min $10).');
+    if (!amount || parsedAmount < 300) {
+      setInputError('Minimum amount is 300 USDT.');
       return;
     }
     if (!ADMIN_WALLET) {
@@ -224,11 +237,11 @@ export default function ContributeClient() {
             <div className="mb-6 w-full">
               <label className="block text-gray-dark font-semibold mb-2">Investment Amount (USDT)</label>
               <div className="flex gap-2 mb-2 w-full flex-wrap">
-                {[10,25,50,100].map(val => (
+                {[300,3000,30000].map(val => (
                   <button
                     key={val}
                     className="flex-1 min-w-[70px] bg-gold-gradient text-gray-dark font-bold px-2 py-2 rounded shadow border border-gold-dark hover:bg-gold-dark hover:text-white transition-all"
-                    onClick={() => setAmount(val.toString())}
+                    onClick={() => handleAmountChange(val.toString())}
                     type="button"
                   >
                     ${val}
@@ -237,12 +250,15 @@ export default function ContributeClient() {
               </div>
               <input
                 type="number"
-                min="10"
-                placeholder="Enter amount (min $10)"
+                min="300"
+                placeholder="Enter amount (min $300)"
                 className="w-full h-12 px-4 rounded border border-gold-dark bg-gold-gradient text-gray-dark focus:ring-2 focus:ring-gold-dark"
                 value={amount}
-                onChange={e => setAmount(e.target.value)}
+                onChange={e => handleAmountChange(e.target.value)}
               />
+              {inputError && (
+                <div className="text-red-700 text-sm mt-1">{inputError}</div>
+              )}
             </div>
             {/* Referral Code Field */}
             {!hasParent && (
