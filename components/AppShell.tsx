@@ -6,7 +6,7 @@ import BottomNav from "./BottomNav";
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const showNavbars = pathname !== "/";
+  const showNavbars = pathname !== "/" && pathname !== "/privacy-policy";
   return (
     <>
       {showNavbars && <TopNav />}
