@@ -306,6 +306,24 @@ export default function HomePage() {
               </section>
             );
           })()}
+        {/* Partnership Section - Slider */}
+        {(() => {
+          const [partnerRef, partnerVisible] = useScrollReveal();
+          return (
+            <section ref={partnerRef} className={`w-full px-2 py-12 transition-all duration-700 ease-out ${partnerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
+              <h2 className="font-serif text-3xl text-accent mb-8 text-center">Our Partners</h2>
+              <div className="overflow-x-auto w-full">
+                <div className="flex gap-6 items-center justify-center min-w-0 py-2">
+                  <img src="/partnership/trust.png" alt="Trust Wallet" className="h-16 w-auto transition-all" />
+                  <img src="/partnership/bitget.png" alt="Bitget Wallet" className="h-16 w-auto transition-all" />
+                  <img src="/partnership/metamask.png" alt="MetaMask" className="h-16 w-auto transition-all" />
+                  <img src="/partnership/tron.png" alt="Tron" className="h-16 w-auto transition-all" />
+                  <img src="/partnership/polygon.png" alt="Polygon" className="h-16 w-auto transition-all" />
+                </div>
+              </div>
+            </section>
+          );
+        })()}
         </div>
       {/* At the end of the main render, add the modal */}
       {zoomImg && (
