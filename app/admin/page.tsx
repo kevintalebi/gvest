@@ -33,11 +33,11 @@ export default function AdminPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-6 flex flex-col items-center">
               <div className="font-serif text-xl mb-2">Total Deposit</div>
-              <div className="text-3xl font-bold">${totalDeposit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USDT</div>
+              <div className="text-3xl font-bold text-yellow-400">${totalDeposit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USDT</div>
             </div>
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-6 flex flex-col items-center">
               <div className="font-serif text-xl mb-2">Total Withdrawal</div>
-              <div className="text-3xl font-bold">${totalWithdrawal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USDT</div>
+              <div className="text-3xl font-bold text-yellow-400">${totalWithdrawal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USDT</div>
             </div>
           </div>
           <section className="mb-10 bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-6 w-full">
@@ -49,7 +49,7 @@ export default function AdminPage() {
                     <li key={i} className="flex flex-col md:flex-row md:items-center justify-between bg-gold-dark/20 rounded p-2 break-all">
                       <span className="font-mono break-all">{d.created_at ? new Date(d.created_at).toLocaleString() : ''}</span>
                       <span className="ml-2 break-all">{d.address}</span>
-                      <span className="ml-2 font-bold">${d.amount} USDT</span>
+                      <span className="ml-2 font-bold text-yellow-400">${d.amount} USDT</span>
                       {d.txid && <a href={`https://polygonscan.com/tx/${d.txid}`} target="_blank" rel="noopener noreferrer" className="underline text-sm ml-2 break-all">View Tx</a>}
                     </li>
                   ))}
@@ -66,7 +66,7 @@ export default function AdminPage() {
                     <li key={i} className="flex flex-col md:flex-row md:items-center justify-between bg-gold-dark/20 rounded p-2 break-all">
                       <span className="font-mono break-all">{w.created_at ? new Date(w.created_at).toLocaleString() : ''}</span>
                       <span className="ml-2 break-all">{w.address}</span>
-                      <span className="ml-2 font-bold">${w.amount} USDT</span>
+                      <span className="ml-2 font-bold text-yellow-400">${w.amount} USDT</span>
                       <span className="ml-2 break-all">{w.type}</span>
                     </li>
                   ))}

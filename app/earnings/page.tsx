@@ -163,13 +163,13 @@ export default function EarningsPage() {
             <div className="mb-6 w-full flex justify-center">
               <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-6 w-full max-w-md text-gray-dark flex flex-col items-center">
                 <div className="font-serif text-2xl mb-2">Income</div>
-                <div className="text-4xl font-bold mb-2">${totalIncome.toFixed(2)} <span className="text-2xl">USDT</span></div>
+                <div className="text-4xl font-bold mb-2 text-yellow-400">${totalIncome.toFixed(2)} <span className="text-2xl">USDT</span></div>
               </div>
             </div>
             {/* Referral and Invest Income below the card */}
             <div className="flex flex-col gap-2 w-full max-w-md mx-auto text-lg mb-6">
-              <div className="flex justify-between w-full"><span>Referral Income:</span><span className="font-bold">${referralIncome.toFixed(2)} USDT</span></div>
-              <div className="flex justify-between w-full"><span>Invest Income:</span><span className="font-bold">${investIncome.toFixed(2)} USDT</span></div>
+              <div className="flex justify-between w-full"><span>Referral Income:</span><span className="font-bold text-yellow-400">${referralIncome.toFixed(2)} USDT</span></div>
+              <div className="flex justify-between w-full"><span>Invest Income:</span><span className="font-bold text-yellow-400">${investIncome.toFixed(2)} USDT</span></div>
             </div>
             {loading ? (
               <div className="mb-4">Loading...</div>

@@ -103,27 +103,31 @@ export default function DashboardPage() {
           <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-8 mb-10 w-full">
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-4 w-full text-gray-dark">
               <div className="mb-1">Total Investment</div>
-              <div className="text-2xl font-bold">{totalInvestment !== null ? `$${totalInvestment} USDT` : '—'}</div>
+              <div className="text-2xl font-bold">{totalInvestment !== null ? <span className="text-yellow-400">${totalInvestment} USDT</span> : '—'}</div>
             </div>
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-4 w-full text-gray-dark">
               <div className="mb-1">Total Withdrawal</div>
-              <div className="text-2xl font-bold">{totalWithdrawal !== null ? `$${totalWithdrawal} USDT` : '—'}</div>
+              <div className="text-2xl font-bold">{totalWithdrawal !== null ? <span className="text-yellow-400">${totalWithdrawal} USDT</span> : '—'}</div>
             </div>
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-4 w-full text-gray-dark">
               <div className="mb-1">Monthly Returns</div>
-              <div className="text-2xl font-bold">{monthlyIncome !== null ? `$${Number(monthlyIncome).toFixed(4)} USDT` : '—'}</div>
+              <div className="text-2xl font-bold">{monthlyIncome !== null ? <span className="text-yellow-400">${Number(monthlyIncome).toFixed(4)} USDT</span> : '—'}</div>
             </div>
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-4 w-full text-gray-dark">
               <div className="mb-1">Total Income</div>
-              <div className="text-2xl font-bold">{totalIncome !== null ? `$${totalIncome} USDT` : '—'}</div>
+              <div className="text-2xl font-bold">{totalIncome !== null ? <span className="text-yellow-400">${totalIncome} USDT</span> : '—'}</div>
             </div>
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-4 w-full text-gray-dark">
               <div className="mb-1">Referral Income</div>
-              <div className="text-2xl font-bold">{referralIncome !== null ? `$${referralIncome} USDT` : '—'}</div>
+              <div className="text-2xl font-bold">{referralIncome !== null ? <span className="text-yellow-400">${referralIncome} USDT</span> : '—'}</div>
             </div>
             <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-4 w-full text-gray-dark">
               <div className="mb-1">Invest Income</div>
-              <div className="text-2xl font-bold">{investIncome !== null ? `$${investIncome} USDT` : '—'}</div>
+              <div className="text-2xl font-bold">{investIncome !== null ? <span className="text-yellow-400">${investIncome} USDT</span> : '—'}</div>
+            </div>
+            <div className="bg-gold border border-gold-dark rounded-lux shadow-gold-glow p-4 w-full text-gray-dark">
+              <div className="mb-1">Total Referrals</div>
+              <div className="text-2xl font-bold"><span className="text-yellow-400">{totalReferrals}</span></div>
             </div>
           </section>
         </div>

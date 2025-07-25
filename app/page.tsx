@@ -22,16 +22,9 @@ function useScrollReveal() {
   return [ref, visible] as const;
 }
 
-function Navbar() {
-  return (
-    <nav className="navbar flex items-center justify-center px-4 md:px-8 py-4 border-b border-gray-200 relative bg-white z-30">
-      <div className="flex items-center gap-2">
-        <span className="text-xl md:text-2xl font-bold text-white tracking-tight">GoodmanVest</span>
-      </div>
-      {/* Navigation links removed */}
-    </nav>
-  );
-}
+
+
+
 
 function Section({ children, className = "" }: React.PropsWithChildren<{ className?: string }>) {
   return <section className={`section w-full max-w-full box-border px-2 sm:px-4 md:px-8 ${className}`}>{children}</section>;
@@ -73,14 +66,13 @@ export default function HomePage() {
   ];
   return (
     <main className="min-h-screen text-white font-sans overflow-x-hidden bg-[#0f1932]">
-      <div className="container mx-auto w-full max-w-screen-lg px-2 sm:px-4 md:px-8 box-border bg-transparent">
-        <Navbar />
+      <div className="container mx-auto w-full max-w-screen-lg px-2 sm:px-4 md:px-8 box-border bg-transparent pt-20 md:pt-16">
         {/* Hero Banner */}
         <Section className="w-full max-w-full flex flex-col md:flex-row items-center justify-between py-8 md:py-16 bg-transparent">
           <div className="bg-[#0f1932] border border-white rounded-xl p-6 md:p-10 w-full h-full text-white flex flex-col md:flex-row items-center justify-between">
             <div className="flex-1 max-w-full w-full mb-6 md:mb-0">
               <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight break-words text-center md:text-left w-full max-w-full">Reliable Real Estate Investment Solutions</h1>
-              <p className="text-sm sm:text-base md:text-lg mb-6 text-white break-words text-center md:text-left w-full max-w-full">Access a professionally managed, diversified property portfolio with transparent, blockchain-secured ownership. Start with as little as <span className="text-white font-bold">$300 USDT</span>.</p>
+              <p className="text-sm sm:text-base md:text-lg mb-6 text-white break-words text-center md:text-left w-full max-w-full">Access a professionally managed, diversified property portfolio with transparent, blockchain-secured ownership. Start with as little as <span className="text-yellow-400">$300</span> USDT.</p>
               <div className="flex justify-center md:justify-start w-full">
                 <CustomConnectWallet />
               </div>
@@ -98,7 +90,7 @@ export default function HomePage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center break-words w-full max-w-full">Investment Benefits</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               <div className="text-center">
-                <h3 className="text-xl font-bold text-white mb-2 break-words w-full max-w-full text-center md:text-left">6-8% Monthly Returns</h3>
+                <h3 className="text-xl font-bold text-white mb-2 break-words w-full max-w-full text-center md:text-left"><span className="text-yellow-400">6-8%</span> Monthly Returns</h3>
                 <p className="break-words w-full max-w-full text-center md:text-left">Consistent passive income from rental yields.</p>
               </div>
               <div className="text-center">
@@ -122,17 +114,17 @@ export default function HomePage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center break-words w-full max-w-full">How Real Estate Investment Works</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               <div className="text-center">
-                <div className="text-4xl mb-2 text-white font-bold">1</div>
+                <div className="text-4xl mb-2 text-yellow-400 font-bold">1</div>
                 <h4 className="font-bold mb-2">Contribute USDT</h4>
                 <p>Your funds go into a diversified real estate portfolio.</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-2 text-white font-bold">2</div>
+                <div className="text-4xl mb-2 text-yellow-400 font-bold">2</div>
                 <h4 className="font-bold mb-2">Earn Monthly Returns</h4>
-                <p>6-8% monthly from rental income and appreciation.</p>
+                <p><span className="text-yellow-400">6-8%</span> monthly from rental income and appreciation.</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-2 text-white font-bold">3</div>
+                <div className="text-4xl mb-2 text-yellow-400 font-bold">3</div>
                 <h4 className="font-bold mb-2">Compound Growth</h4>
                 <p>Reinvest returns or withdraw monthly.</p>
               </div>
@@ -149,7 +141,7 @@ export default function HomePage() {
                 {portfolioData.map((item, idx) => (
                   <div key={item.img + idx} className="min-w-[80vw] max-w-xs p-2 rounded bg-transparent flex-shrink-0">
                     <div className="bg-[#0f1932] border border-white rounded-lg shadow p-3 flex flex-col w-full text-white">
-                      <div className="relative w-full aspect-[16/9] bg-[#0f1932] rounded-lg mb-2 overflow-hidden">
+                      <div className="relative w-full aspect-[16/9] bg-slate-400 rounded-lg mb-2 overflow-hidden">
                         <button
                           onClick={() => {
                             setZoomImg(`/images/${item.img}`);
@@ -169,7 +161,7 @@ export default function HomePage() {
                       </div>
                       <div className="font-bold text-white mb-1">{item.name}</div>
                       <div className="text-gray-600 mb-1">{item.location}</div>
-                      <div className="text-sm">Occupancy: <span className="text-white font-bold">{item.occupancy}%</span> | Value: <span className="text-white font-bold">${item.value}M</span></div>
+                      <div className="text-sm">Occupancy: <span className="text-white font-bold"><span className="text-yellow-400">{item.occupancy}%</span></span> | Value: <span className="text-white font-bold"><span className="text-yellow-400">${item.value}M</span></span></div>
                     </div>
                   </div>
                 ))}
@@ -179,7 +171,7 @@ export default function HomePage() {
                 {portfolioData.map((item, idx) => (
                   <div key={item.img + idx} className="p-2 rounded bg-transparent">
                     <div className="bg-[#0f1932] border border-white rounded-lg shadow p-3 flex flex-col w-full text-white">
-                      <div className="relative w-full aspect-[16/9] bg-[#0f1932] rounded-lg mb-2 overflow-hidden">
+                      <div className="relative w-full aspect-[16/9] bg-slate-400 rounded-lg mb-2 overflow-hidden">
                         <button
                           onClick={() => {
                             setZoomImg(`/images/${item.img}`);
@@ -199,7 +191,7 @@ export default function HomePage() {
                       </div>
                       <div className="font-bold text-white mb-1">{item.name}</div>
                       <div className="text-gray-600 mb-1">{item.location}</div>
-                      <div className="text-sm">Occupancy: <span className="text-white font-bold">{item.occupancy}%</span> | Value: <span className="text-white font-bold">${item.value}M</span></div>
+                      <div className="text-sm">Occupancy: <span className="text-white font-bold"><span className="text-yellow-400">{item.occupancy}%</span></span> | Value: <span className="text-white font-bold"><span className="text-yellow-400">${item.value}M</span></span></div>
                     </div>
                   </div>
                 ))}
@@ -217,7 +209,7 @@ export default function HomePage() {
                       {galleryData.map((item, idx) => (
                         <div key={item.img + idx} className="min-w-[80vw] max-w-xs p-2 rounded bg-transparent flex-shrink-0">
                           <div className="bg-[#0f1932] border border-white rounded-lg shadow p-3 flex flex-col w-full text-white">
-                            <div className="relative w-full aspect-[16/9] bg-[#0f1932] rounded-lg mb-2 overflow-hidden">
+                            <div className="relative w-full aspect-[16/9] bg-slate-400 rounded-lg mb-2 overflow-hidden">
                                 <button
                                   onClick={() => {
                                     setZoomImg(`/images/${item.img}`);
@@ -236,7 +228,7 @@ export default function HomePage() {
                             </div>
                             <div className="font-bold text-white mb-1">{item.name}</div>
                             <div className="text-gray-600 mb-1">{item.location}</div>
-                            <div className="text-sm">Occupancy: <span className="text-white font-bold">{item.occupancy}%</span> | Value: <span className="text-white font-bold">${item.value}M</span></div>
+                            <div className="text-sm">Occupancy: <span className="text-white font-bold"><span className="text-yellow-400">{item.occupancy}%</span></span> | Value: <span className="text-white font-bold"><span className="text-yellow-400">${item.value}M</span></span></div>
                           </div>
                         </div>
                       ))}
@@ -246,7 +238,7 @@ export default function HomePage() {
                       {galleryData.map((item, idx) => (
                         <div key={item.img + idx} className="p-2 rounded bg-transparent">
                           <div className="bg-[#0f1932] border border-white rounded-lg shadow p-3 flex flex-col w-full text-white">
-                            <div className="relative w-full aspect-[16/9] bg-[#0f1932] rounded-lg mb-2 overflow-hidden">
+                            <div className="relative w-full aspect-[16/9] bg-slate-400 rounded-lg mb-2 overflow-hidden">
                                 <button
                                   onClick={() => {
                                     setZoomImg(`/images/${item.img}`);
@@ -265,7 +257,7 @@ export default function HomePage() {
                             </div>
                             <div className="font-bold text-white mb-1">{item.name}</div>
                             <div className="text-gray-600 mb-1">{item.location}</div>
-                            <div className="text-sm">Occupancy: <span className="text-white font-bold">{item.occupancy}%</span> | Value: <span className="text-white font-bold">${item.value}M</span></div>
+                            <div className="text-sm">Occupancy: <span className="text-white font-bold"><span className="text-yellow-400">{item.occupancy}%</span></span> | Value: <span className="text-white font-bold"><span className="text-yellow-400">${item.value}M</span></span></div>
                           </div>
                         </div>
                       ))}
@@ -278,27 +270,27 @@ export default function HomePage() {
           <div className="bg-[#0f1932] border border-white rounded-xl p-6 md:p-10 w-full h-full text-white">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center break-words w-full max-w-full">Real Estate Investment Program</h2>
             <div className="bg-[#0f1932] border-none rounded p-4 sm:p-8 text-center w-full max-w-full md:max-w-2xl mx-auto box-border">
-              <p className="text-lg mb-6 break-words w-full max-w-full text-center md:text-left">Minimum investment is <span className="text-white font-bold">$300</span>.<br/>Your monthly income depends on your investment amount:</p>
+              <p className="text-lg mb-6 break-words w-full max-w-full text-center md:text-left">Minimum investment is <span className="text-yellow-400">$300</span>.<br/>Your monthly income depends on your investment amount:</p>
               <ol className="space-y-4 text-left mx-auto w-full max-w-full md:max-w-md list-decimal list-inside box-border">
                 <li className="flex items-start gap-3 bg-[#0f1932] border-l-4 border-white rounded-md p-4 shadow-sm break-words w-full max-w-full">
-                  <span className="text-2xl font-bold text-white">1</span>
+                  <span className="text-2xl font-bold text-yellow-400">1</span>
                         <div>
-                    <span className="text-white font-bold">$300 - $2,999</span><br/>
-                          <span className="text-lg">6% monthly income</span>
+                    <span className="text-white font-bold"><span className="text-yellow-400">$300 - $2,999</span></span><br/>
+                          <span className="text-lg"><span className="text-yellow-400">6%</span> monthly income</span>
                         </div>
                       </li>
                 <li className="flex items-start gap-3 bg-[#0f1932] border-l-4 border-white rounded-md p-4 shadow-sm break-words w-full max-w-full">
-                  <span className="text-2xl font-bold text-white">2</span>
+                  <span className="text-2xl font-bold text-yellow-400">2</span>
                         <div>
-                    <span className="text-white font-bold">$3,000 - $29,999</span><br/>
-                          <span className="text-lg">7% monthly income</span>
+                    <span className="text-white font-bold"><span className="text-yellow-400">$3,000 - $29,999</span></span><br/>
+                          <span className="text-lg"><span className="text-yellow-400">7%</span> monthly income</span>
                         </div>
                       </li>
                 <li className="flex items-start gap-3 bg-[#0f1932] border-l-4 border-white rounded-md p-4 shadow-sm break-words w-full max-w-full">
-                  <span className="text-2xl font-bold text-white">3</span>
+                  <span className="text-2xl font-bold text-yellow-400">3</span>
                         <div>
-                    <span className="text-white font-bold">$30,000+</span><br/>
-                          <span className="text-lg">8% monthly income</span>
+                    <span className="text-white font-bold"><span className="text-yellow-400">$30,000+</span></span><br/>
+                          <span className="text-lg"><span className="text-yellow-400">8%</span> monthly income</span>
                         </div>
                       </li>
                     </ol>
@@ -312,9 +304,9 @@ export default function HomePage() {
             <div className="bg-[#0f1932] border-none rounded p-4 sm:p-8 text-center w-full max-w-full md:max-w-2xl mx-auto box-border">
               <p className="text-lg mb-4 break-words w-full max-w-full text-center md:text-left">Earn additional income by referring other real estate investors. Build your passive income network and grow your rewards through our multi-level referral program.</p>
               <ul className="mb-4 text-left mx-auto w-full max-w-full md:max-w-md break-words box-border">
-                <li className="break-words w-full max-w-full">• Level 1: <span className="text-yellow-400 font-bold">30%</span> monthly commission from direct referrals</li>
-                <li className="break-words w-full max-w-full">• Level 2: <span className="text-yellow-400 font-bold">20%</span> monthly commission from second-level referrals</li>
-                <li className="break-words w-full max-w-full">• Level 3: <span className="text-yellow-400 font-bold">10%</span> monthly commission from third-level referrals</li>
+                <li className="break-words w-full max-w-full">• Level <span className="text-yellow-400">1</span>: <span className="text-yellow-400">30%</span> monthly commission from direct referrals</li>
+                <li className="break-words w-full max-w-full">• Level <span className="text-yellow-400">2</span>: <span className="text-yellow-400">20%</span> monthly commission from second-level referrals</li>
+                <li className="break-words w-full max-w-full">• Level <span className="text-yellow-400">3</span>: <span className="text-yellow-400">10%</span> monthly commission from third-level referrals</li>
                     </ul>
                   </div>
           </div>
@@ -324,9 +316,9 @@ export default function HomePage() {
           <div className="bg-[#0f1932] border border-white rounded-xl p-6 md:p-10 w-full h-full text-white">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">Reward Program</h2>
             <ul className="space-y-4 text-lg">
-              <li>1. If you have 3 line each with above 3000 volume you will earn reward <span className="font-bold text-yellow-400">$300</span></li>
-              <li>2. If you have 3 line each with above 30000 volume you will earn reward <span className="font-bold text-yellow-400">$3000</span></li>
-              <li>3. If you have 3 line each with above 300000 volume you will earn reward <span className="font-bold text-yellow-400">$30000</span></li>
+              <li><span className="text-yellow-400">1</span>. If you have <span className="text-yellow-400">3</span> line each with above <span className="text-yellow-400">3000</span> volume you will earn reward <span className="text-yellow-400">$300</span></li>
+              <li><span className="text-yellow-400">2</span>. If you have <span className="text-yellow-400">3</span> line each with above <span className="text-yellow-400">30000</span> volume you will earn reward <span className="text-yellow-400">$3000</span></li>
+              <li><span className="text-yellow-400">3</span>. If you have <span className="text-yellow-400">3</span> line each with above <span className="text-yellow-400">300000</span> volume you will earn reward <span className="text-yellow-400">$30000</span></li>
             </ul>
           </div>
         </Section>
@@ -335,9 +327,9 @@ export default function HomePage() {
           <div className="bg-[#0f1932] border border-white rounded-xl p-6 md:p-10 w-full h-full text-white">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">Our Partners</h2>
             <div className="flex flex-row gap-6 overflow-x-auto pb-2 -mx-2 px-2 items-center">
-              {['bitget.png', 'metamask.png', 'polygon.png', 'tron.png', 'trust.png'].map((img) => (
+              {['bitget.png', 'metamask.png', 'polygon.png', 'trust.png', 'safepal.webp'].map((img) => (
                 <div key={img} className="bg-[#0f1932] border border-white rounded-lg p-2 flex-shrink-0 flex items-center justify-center">
-                  <img src={`/partnership/${img}`} alt={img.replace('.png', '')} className="h-16 w-auto object-contain" />
+                  <img src={`/partnership/${img}`} alt={img.replace('.png', '').replace('.svg', '').replace('.webp', '')} className="h-16 w-auto object-contain" />
                 </div>
               ))}
             </div>
@@ -354,7 +346,12 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-2 text-gray-500 text-sm">
           <span>© {new Date().getFullYear()} GoodmanVest. All rights reserved.</span>
           <span className="hidden md:inline-block mx-2">|</span>
-            <Link href="/privacy-policy" className="underline hover:text-[#d32f2f] transition-colors">Privacy Policy</Link>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-2 text-center">
+              <Link href="/privacy-policy" className="hover:text-[#d32f2f] transition-colors">Privacy Policy</Link>
+              <Link href="/investor-center" className="hover:text-[#d32f2f] transition-colors">Investor Center</Link>
+              <Link href="/about-us" className="hover:text-[#d32f2f] transition-colors">About Us</Link>
+              <Link href="/news" className="hover:text-[#d32f2f] transition-colors">News</Link>
+            </div>
         </div>
       </footer>
       </div>

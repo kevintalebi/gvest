@@ -187,7 +187,7 @@ export default function ReferralsPage() {
           {/* Personal Referral Code */}
           <section className="mb-10 bg-glass border border-accent rounded-lux shadow-gold-glow backdrop-blur-lux p-4 md:p-8 w-full flex flex-col items-center justify-center">
             <div className="text-4xl font-serif font-bold text-accent mb-4 text-center">Total Referrals</div>
-            <div className="text-6xl font-extrabold text-gold-dark mb-2 drop-shadow-lg text-center">{totalReferrals}</div>
+            <div className="text-6xl font-extrabold text-yellow-400 mb-2 drop-shadow-lg text-center">{totalReferrals}</div>
             <div className="text-lg text-lux-gray text-center">across your entire network</div>
           </section>
           {/* Referral Tree */}
@@ -205,18 +205,18 @@ export default function ReferralsPage() {
                     {directChildren.map(child => (
                       <li key={child.address} className="mb-2 break-all">
                         <span className="font-mono text-accent break-all">{child.address}</span>: 
-                        <span className="ml-2">${Number(child.total_invest) + getSubtreeInvest(child.address)}</span>
+                        <span className="ml-2 text-yellow-400">${Number(child.total_invest) + getSubtreeInvest(child.address)}</span>
                       </li>
                     ))}
                   </ul>
                   {showClaim300 && !claimedRewards[300] && (
-                    <button onClick={() => handleClaim(300)} className="mt-6 w-full bg-gold-gradient text-primary font-bold py-3 rounded-lux shadow-gold-glow hover:scale-105 transition-all text-xl">Claim Reward $300</button>
+                    <button onClick={() => handleClaim(300)} className="mt-6 w-full bg-gold-gradient text-primary font-bold py-3 rounded-lux shadow-gold-glow hover:scale-105 transition-all text-xl">Claim Reward <span className="text-yellow-400">$300</span></button>
                   )}
                   {showClaim3000 && !claimedRewards[3000] && (
-                    <button onClick={() => handleClaim(3000)} className="mt-4 w-full bg-gold-gradient text-primary font-bold py-3 rounded-lux shadow-gold-glow hover:scale-105 transition-all text-xl">Claim Reward $3,000</button>
+                    <button onClick={() => handleClaim(3000)} className="mt-4 w-full bg-gold-gradient text-primary font-bold py-3 rounded-lux shadow-gold-glow hover:scale-105 transition-all text-xl">Claim Reward <span className="text-yellow-400">$3,000</span></button>
                   )}
                   {showClaim30000 && !claimedRewards[30000] && (
-                    <button onClick={() => handleClaim(30000)} className="mt-4 w-full bg-gold-gradient text-primary font-bold py-3 rounded-lux shadow-gold-glow hover:scale-105 transition-all text-xl">Claim Reward $30,000</button>
+                    <button onClick={() => handleClaim(30000)} className="mt-4 w-full bg-gold-gradient text-primary font-bold py-3 rounded-lux shadow-gold-glow hover:scale-105 transition-all text-xl">Claim Reward <span className="text-yellow-400">$30,000</span></button>
                   )}
                   {claimStatus && <div className="mt-4 text-center text-accent font-semibold">{claimStatus}</div>}
                 </>

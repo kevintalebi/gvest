@@ -37,17 +37,17 @@ Thank you for your attention and continued trust in Goodman Real Estate Investme
           <h2 className="text-2xl font-bold text-accent mb-2">Agreement</h2>
           <p>
 
-This Investment Agreement (“Agreement”) is made between the undersigned investor (“Investor”) and Goodman Real Estate Investment Fund (“the Fund”), effective as of the date of signature below.
+This Investment Agreement ("Agreement") is made between the undersigned investor ("Investor") and Goodman Real Estate Investment Fund ("the Fund"), effective as of the date of signature below.
 
-1. **Investment Commitment**: The Investor agrees to invest the amount specified in the subscription form, subject to acceptance by the Fund. The Fund reserves the right to accept or reject any investment in whole or in part.
+<span className="text-yellow-400">1</span>. **Investment Commitment**: The Investor agrees to invest the amount specified in the subscription form, subject to acceptance by the Fund. The Fund reserves the right to accept or reject any investment in whole or in part.
 
-2. **Acknowledgment of Risk**: The Investor acknowledges that investments in the Fund are speculative and involve substantial risk, including possible loss of principal. The Investor confirms they are a qualified or accredited investor as defined by applicable securities laws.
+<span className="text-yellow-400">2</span>. **Acknowledgment of Risk**: The Investor acknowledges that investments in the Fund are speculative and involve substantial risk, including possible loss of principal. The Investor confirms they are a qualified or accredited investor as defined by applicable securities laws.
 
-3. **Confidentiality**: The Investor agrees to keep all Fund-related materials, performance data, and proprietary strategies confidential.
+<span className="text-yellow-400">3</span>. **Confidentiality**: The Investor agrees to keep all Fund-related materials, performance data, and proprietary strategies confidential.
 
-4. **No Guarantee**: The Fund makes no guarantee of returns. All investments are subject to market risks and fluctuations.
+<span className="text-yellow-400">4</span>. **No Guarantee**: The Fund makes no guarantee of returns. All investments are subject to market risks and fluctuations.
 
-5. **Governing Law**: This Agreement shall be governed by the laws of the jurisdiction in which the Fund is registered.
+<span className="text-yellow-400">5</span>. **Governing Law**: This Agreement shall be governed by the laws of the jurisdiction in which the Fund is registered.
 
           </p>
         </section>

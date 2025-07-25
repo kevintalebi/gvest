@@ -232,7 +232,7 @@ export default function ContributeClient() {
         <div className="w-full max-w-2xl mx-auto px-2 md:px-0 py-8">
           <section className="mb-10 bg-gold border border-gold-dark rounded-lux shadow-gold-glow backdrop-blur-lux p-8 w-full">
             <h1 className="font-serif text-4xl text-gray-dark mb-4">Invest in Real Estate Fund</h1>
-            <p className="text-lg text-gray-dark mb-6">Contribute USDT to our diversified property portfolio and start earning <span className="font-bold">{(monthlyReturnRate * 100).toFixed(0)}% monthly returns</span>.</p>
+            <p className="text-lg text-gray-dark mb-6">Contribute USDT to our diversified property portfolio and start earning <span className="font-bold text-yellow-400">{(monthlyReturnRate * 100).toFixed(0)}% monthly returns</span>.</p>
             {/* Investment Amount Input */}
             <div className="mb-6 w-full">
               <label className="block text-gray-dark font-semibold mb-2">Investment Amount (USDT)</label>
@@ -244,7 +244,7 @@ export default function ContributeClient() {
                     onClick={() => handleAmountChange(val.toString())}
                     type="button"
                   >
-                    ${val}
+                    <span className="text-yellow-400">${val}</span>
                   </button>
                 ))}
               </div>
@@ -275,8 +275,8 @@ export default function ContributeClient() {
             )}
             {/* Investment Summary */}
             <div className="mb-6 bg-gold-dark/80 rounded p-4 border border-gold-dark w-full text-gray-dark">
-              <div className="flex justify-between mb-2"><span>Investment:</span><span className="font-bold">${parsedAmount} USDT</span></div>
-              <div className="flex justify-between mb-2"><span>Est. Monthly Returns:</span><span className="font-bold">${monthlyReturns.toFixed(2)} USDT</span></div>
+              <div className="flex justify-between mb-2"><span>Investment:</span><span className="font-bold text-yellow-400">${parsedAmount} USDT</span></div>
+              <div className="flex justify-between mb-2"><span>Est. Monthly Returns:</span><span className="font-bold text-yellow-400">${monthlyReturns.toFixed(2)} USDT</span></div>
             </div>
             {/* Invest Button */}
             <button
@@ -307,7 +307,7 @@ export default function ContributeClient() {
                 {transactions.map((tx, index) => (
                   <li key={index} className="flex flex-col md:flex-row md:items-center justify-between bg-gold-dark/20 rounded p-2">
                     <span className="font-mono text-gray-dark break-all">{tx.created_at ? new Date(tx.created_at).toLocaleString() : ''}</span>
-                    <span className="ml-2 font-bold">${tx.amount} USDT</span>
+                    <span className="ml-2 font-bold text-yellow-400">${tx.amount} USDT</span>
                     {tx.txid && (
                       <a href={`https://polygonscan.com/tx/${tx.txid}`} target="_blank" rel="noopener noreferrer" className="underline text-sm ml-2">View on Polygonscan</a>
                     )}

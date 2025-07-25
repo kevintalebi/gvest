@@ -46,10 +46,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ startDate }) => {
               <div className="text-green-700 font-bold text-xl">Completed</div>
             ) : (
               <div className="flex gap-2 text-2xl font-mono">
-                <span>{days}d</span> <span>:</span>
-                <span>{hours}h</span> <span>:</span>
-                <span>{minutes}m</span> <span>:</span>
-                <span>{seconds}s</span>
+                <span className="text-yellow-400">{days}</span><span>d</span> <span>:</span>
+                <span className="text-yellow-400">{hours}</span><span>h</span> <span>:</span>
+                <span className="text-yellow-400">{minutes}</span><span>m</span> <span>:</span>
+                <span className="text-yellow-400">{seconds}</span><span>s</span>
               </div>
             )}
           </div>
