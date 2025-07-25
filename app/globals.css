@@ -20,10 +20,58 @@
   }
 }
 
-body {
-  background: linear-gradient(90deg, #e0b646 0%, #cedad9 100%);
-  color: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+body, html {
+  background: #0f1932 !important;
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.bg-gold-gradient, .bg-gold-dark, .shadow-gold-glow, .text-lux-gray, .text-accent, .border-accent, .rounded-lux, .bg-glass {
+  background: none !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  border-radius: 8px !important;
+}
+
+.text-accent {
+  color: #fff !important;
+}
+
+.bg-accent {
+  background: #fff !important;
+}
+
+.btn {
+  background: #fff;
+  color: #0f1932;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border: none;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #e0e7ef;
+}
+
+nav, .navbar {
+  background: #0f1932 !important;
+  border-bottom: 1px solid #eee;
+  color: #fff;
+}
+
+footer {
+  background: #0f1932 !important;
+  color: #fff;
+}
+
+.section {
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  background: #0f1932 !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 button, input, select, optgroup, textarea, ::file-selector-button {
